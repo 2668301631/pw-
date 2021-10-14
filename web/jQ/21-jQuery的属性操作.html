@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+	.box{
+		width: 200px;
+		height: 200px;
+		background-color: pink;
+	}
+	.kk{
+		font-size: 50px;
+	}
+	input{
+		width: 50px;
+		height: 50px;
+	}
+</style>
+	
+<script src="js/jquery-3.1.1.js"></script>
+	
+<script>
+	$(function(){
+		$('button').eq(0).click(function(){
+			$(".box")[0].className += ' kk';
+//			$(".box").className = 'kk';
+			
+			//JQ中操作页面属性的方法 attr()
+			//一个参数传入属性名，获取属性值
+			//传入两个参数，添加指定属性
+			$('.box').attr('id','kaka');
+			$('.box').attr('title','我不是盒子');
+			
+			//添加或修改执行属性的值
+//			$('.box').attr('class','kk');
+			$('.box').attr('class','box kk');
+			
+			//获取属性值
+			console.log($('.box').attr('id'));
+			console.log($('.box').attr('style'));
+			
+			//移除属性，根据属性名移除
+			console.log($('.box').removeAttr('style'));
+			
+		});
+		
+		$('button').eq(1).click(function(){
+			//直接选择input元素下面type为checkbox的元素
+//			$('input:checkbox').attr('checked','checked');
+			
+			//checked selected disabled
+			$('input:checkbox').prop('checked',true);
+		});
+	});
+</script>
+</head>
+
+<body>
+<button>添加类</button>
+<div class="box" style="font-size: 20px;margin: 20px;">jQuery</div>
+	
+<button>选中</button>
+<input type="checkbox">
+
+</body>
+</html>

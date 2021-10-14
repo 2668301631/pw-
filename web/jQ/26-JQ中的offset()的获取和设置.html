@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+	.box{
+		width: 300px;
+		height: 200px;
+		background-color: pink;
+		padding: 50px;
+		margin: 10px;
+		border: 1px solid red;
+/*
+		position: absolute;
+		top:50px;
+		left: 100px;
+*/
+	}	
+</style>
+<script src="js/jquery-3.1.1.js"></script>
+<script>
+	$(function(){
+		$('button').eq(0).click(function(){
+			console.log($('.box').offset());
+			console.log($('.box').offset().top);
+			console.log($('.box').offset().left);
+			
+			
+//			console.log($('.box')[0].offsetTop);
+			
+		});
+		
+		$('button').eq(1).click(function(){
+			$('.box').offset({
+				top:150,
+				left:10
+			});
+		});
+	});
+</script>
+</head>
+
+<body>
+<button>获取scroll()</button>
+<button>设置scroll()</button>
+<div class="box"></div>
+</body>
+</html>

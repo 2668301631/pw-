@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+	div{
+		height: 50px;
+		margin-bottom: 20px;
+		background-color: pink;
+		font-size: 20px;
+		display: none;
+	}	
+</style>
+</head>
+
+<body>
+<button>显示盒子</button>
+<div>扬我国威</div>
+<div>扬我国威</div>
+<div>扬我国威</div>
+<div>扬我国威</div>
+<div>扬我国威</div>
+	
+<script>
+	var btn = document.getElementsByTagName("button")[0];
+	var divArr = document.getElementsByTagName("div");
+	btn.onclick = function(){
+		/*for(var i in divArr){
+			divArr[i].style.display = "block";
+			divArr[i].innerHTML = "虽远必诛！"
+		}*/
+		for(var i=0;i<divArr.length;i++){
+//			console.log(divArr[i]);
+			divArr[i].style.display = 'block';
+			divArr[i].innerHTML = '虽远必诛！';
+		}
+	}
+</script>
+	
+<!--
+<script src="js/jquery-3.1.1.js"></script>
+<script>
+	$(function(){
+		$("button").click(function(){
+			//alert(1);
+			//$("div").html("虽远必诛！");
+			//$("div").show(3000);
+			$("div").html("虽远必诛！").show(3000).css({"color":"blue"} );
+			
+			//jQuery两大特点：隐式迭代（看不见的迭代（遍历））、链式编程
+		});
+		
+	});
+</script>
+-->
+</body>
+</html>

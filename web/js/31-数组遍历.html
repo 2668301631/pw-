@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+<script>
+	var arr = new Array("aa","cc","ww","xx","pp");
+	//把所有数组元素打印到控制台
+	console.log(arr);
+	
+	//第1种遍历：利用for循环的i递变，取出每一个元素
+	for(var i=0;i<arr.length;i++){
+		console.log(arr[i]);
+	}
+	
+	//第2种遍历：for...in，遍历素组，把数组索引值放入自己声明的变量里
+	for(var i in arr){
+		console.log(arr[i]);
+	}
+	
+	
+</script>
+</body>
+</html>

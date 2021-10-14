@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	
+	.wrap{
+		width: 300px;
+		margin: 100px auto 0;
+	}
+	
+	table{
+		border-collapse: collapse;
+		border-spacing: 0;
+		margin: 0 auto;
+	}
+	
+	th,td{
+		border:1px solid #d0d0d0;
+		color: #404060;
+		padding: 10px;
+	}
+	
+	th{
+		background-color: #09c;
+		font:bold 16px "微软雅黑";
+		color: #fff;
+	}
+	
+	td{
+		font:14px "微软雅黑";
+	}
+	
+	tbody tr{
+		background-color: #f0f0f0;
+	}
+	
+	tbody tr:hover{
+		cursor: pointer;
+		background-color: #fafafa;
+	}	
+</style>
+<script src="js/jquery-3.1.1.js"></script>
+<script>
+	// 需求：点击上面下面全选，点击下面，如果都选中，上面全选，如果有一个没选中上面不选中
+	// 步骤：
+	// 1、上面的checkbox点击事件，选中或取消选中下面所有
+	// 2、下面的每一个checkbox点击事件，每点击一次，就要判断，如果全选，上面选中，否则相反
+	
+	$(function(){
+		// 1、上面的checkbox点击事件，选中或取消选中下面所有
+		$('#j_cbAll').click(function(){
+			// $('#j_cbAll').prop('checked') 获取选中后状态
+			$('#j_tb input:checkbox').prop('checked',$('#j_cbAll').prop('checked'))
+		});
+		
+		// 2、下面的每一个checkbox点击事件，每点击一次，就要判断，如果全选，上面选中，否则相反
+		$('#j_tb input:checkbox').click(function(){
+			// 如果下面的全部选中，则上面的是true，否则是false
+			// 如果选中的checkbox的长度跟所有的checkbox的长度一致，表示，所有的都选中，否则，至少有一个没选中
+			if($('#j_tb input:checkbox').length === $('#j_tb input:checked').length){
+			   	$('#j_cbAll').prop('checked',true) 
+			   }else{
+			   	$('#j_cbAll').prop('checked',false)
+			   }
+		});
+	});
+</script>
+</head>
+
+<body>
+	<div class="wrap">
+		<table>
+			<thead>
+				<tr>
+					<th><input type="checkbox" id="j_cbAll"></th>
+					<th>课程名称</th>
+					<th>所属学院</th>
+				</tr>
+			</thead>
+			<tbody id="j_tb">
+				<tr>
+					<td><input type="checkbox"></td>
+					<td>JavaScript</td>
+					<td>前端课程</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox"></td>
+					<td>css</td>
+					<td>前端课程</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox"></td>
+					<td>html</td>
+					<td>前端课程</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox"></td>
+					<td>jQuery</td>
+					<td>前端课程</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+<ul>
+	<li>我是ul中的li</li>
+	<li>我是ul中的li</li>
+	<div>我是ul中的div</div>
+	<li>我是ul中的li</li>
+	<li class="box">我是ul中的li</li>
+	<span>我是ul中的span</span>
+	<li>我是ul中的li</li>
+	<li>我是ul中的li</li>
+	<a href="">我是ul中的a</a>
+	<ol>
+		<li>我是ol中的li</li>
+		<li>我是ol中的li</li>
+		<span>我是ol中的span</span>
+		<li>我是ol中的li</li>
+		<li>我是ol中的li</li>
+	</ol>
+</ul>
+	
+<script src="js/jquery-3.1.1.js"></script>
+<script>
+	$(function(){
+		//1、find()不传参数，表示所有后代，如果传入选择器（find方法参数只能是选择器），就是找到父元素里面子子孙孙的符号选择器的元素
+		/*$("ul").find("li").css({
+			"background-color":"pink",
+			"margin-bottom":"10px"
+		});*/
+		
+		//2、children()查找指定元素的直接子元素（亲儿子元素）
+		//参数可以传入选择器，跟上同理
+		/*$("ul").children("span").css({
+			"background-color":"red"
+		});*/
+		
+		//3、eq(index)根据索引，选择指定
+		/*$("ul").children().eq($("ul").children().length-2).css("background-color","yellow");*/
+		
+		//4、parent()查找父元素（亲的）
+		/*$("ul").children().eq($("ul").children().length-1).children("span").parent().css({
+			"border":"1px solid red"
+		});*/
+		
+		//5、siblings()查找索引兄弟元素（不包括自己）
+		/*$("ul").children(".box").siblings().css("font-size","20px");
+		$("ul").children(".box").siblings("li").css("font-size","20px");*/
+		
+		
+	});
+</script>
+</body>
+</html>

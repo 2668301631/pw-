@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+<script>
+	var json = {
+		"name":"李四",
+		"age":26,
+		"length":185,
+	};
+
+	
+	for(var k in json){
+		console.log(k);
+		//console.log("键:"+k+" 值："+json.k);
+		//对象.属性名，获取属性值，此种方法获取不到，因为，对象没有k属性
+		console.log("键:"+k+" 值："+json[k]);
+	}
+</script>
+</body>
+</html>

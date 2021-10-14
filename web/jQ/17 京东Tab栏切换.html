@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	ul{
+		list-style: none;
+	}
+	.wrapper{
+		width: 1000px;
+		height: 475px;
+		margin: 0 auto;
+		margin-top: 100px;
+	}
+	
+	.tab{
+		border: 1px solid #ddd;
+		border-bottom: 0;
+		height: 36px;
+		width: 320px;
+	}
+	
+	.tab li{
+		position: relative;
+		float: left;
+		width: 80px;
+		height: 34px;
+		line-height: 34px;
+		text-align: center;
+		cursor: pointer;
+		border-top: 4px solid #fff;
+	}
+	
+	.tab span{
+		position: absolute;
+		right: 0;
+		top: 10px;
+		background: #ddd;
+		width: 1px;
+		height: 14px;
+		overflow: hidden;
+	}
+	
+	.products{
+		width: 800px;
+		height: 500px;
+		border: 1px solid #ddd;
+	}
+	
+	.products .main{
+		float: left;
+		display: none
+	}	
+	
+	.products .main.selected{
+		display: block
+	}
+	
+	.tab li.active{
+		border-color:red;
+		border-bottom: 0;
+	}
+	img{
+		width: 800px;
+		height: 500px;
+	}
+</style>
+<script src="js/jquery-3.1.1.js"></script>
+<script>
+	$(function(){
+		//需求：鼠标移入上边的tab栏，下面商品列表对应切换
+		//分析：分析得知，上边的只要添加active类，和下面的只要添加selected类就实现了切换
+		//鼠标移入哪一个li，当前li添加类，其他li移除类
+		
+		//鼠标移入事件
+		$('.tab>li').mouseenter(function(){
+			$(this).addClass('active').siblings('li').removeClass('active');
+			$('.products>.main').eq($(this).index()).addClass('selected').siblings('.main').removeClass('selected');
+		});
+	});
+</script>
+</head>
+	
+
+<body>
+	<div class="wrapper">
+		<ul class="tab">
+			<li class="tab-item active">国际大牌</li>
+			<li class="tab-item">国妆名牌</li>
+			<li class="tab-item">清洁用品</li>
+			<li class="tab-item">生鲜精品</li>
+		</ul>
+		<div class="products">
+			<div class="main selected">
+				<a href="#"><img src="images/tab1.png" alt=""></a>
+			</div>
+			<div class="main">
+				<a href="###"><img src="images/tab2.png" alt=""></a>
+			</div>
+			<div class="main">
+				<a href="###"><img src="images/tab3.png" alt=""></a>
+			</div>
+			<div class="main">
+				<a href="###"><img src="images/tab4.png" alt=""></a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

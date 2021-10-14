@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+<script>
+	//1、查找功能
+	/*var str = "HelloitsztWorld";
+	//参数：索引，根据指定索引查找当前位置字符，如果索引值超出范围，则返回空字符串
+	console.log(str.charAt(8));
+	//unicode，把字符串对应索引的字符转换成Unicode码
+	console.log(str.charCodeAt(8));*/
+	
+	
+	//2、子字符串搜索
+	/*var str = "HelloitsztWorld";
+	//根据字符查找索引位置，第一个出现的，找不到返回-1，大小写是敏感的
+	console.log(str.indexOf("l"));
+	//指定索引开始，往后找，第一个出现指定字符的位置
+	console.log(str.indexOf("l",5));
+	//从后往前找，指定字符第一个出现的索引值
+	console.log(str.lastIndexOf("l"));
+	//从指定位置开始往前找，第一个出现的索引
+	console.log(str.lastIndexOf("l",10));*/
+	
+	
+	//3、字符串截取
+	/*
+		substring(strart,end)//从start位置开始，截取到end位置，end取不到
+		substr(strart,length)//从start位置开始，截取length个字符
+	*/
+	/*var str = "HelloitsztWorld";
+	//从指定位置开始截取到指定位置，包含头不包含尾
+	console.log(str.substring(2,5));
+	//如果是一个参数，是从指定位置开始截取到末尾
+	console.log(str.substring(2));
+	//从指定位置开始，截取指定长度
+	console.log(str.substr(2,5));
+	//如果是一个参数，是从指定位置开始截取到末尾
+	console.log(str.substr(2));*/
+	//总结：传入一个参数时，substr和substring效果一样，都是从开始位置截取到末尾
+	
+	
+	//4、替换replace(srcChar,destChar)
+	/*var str = "HelloitsztWorld";
+	//把字符串中srcChar的字符或字符串，替换成destChar字符或字符串
+	
+	//替换指定字符，只能替换第一个出现的
+	console.log(str.replace('l','x'));
+	console.log(str.replace('llo','xxx'));
+	//把所有字符都替换，正则表达式，g表示全局替换，i表示忽略大小写
+	console.log(str.replace(/l/gi,'x'));*/
+	
+	
+	//4、拆分split()
+	/*var str = "Hello5itszt5World5hehe";
+	//字符串转换成数组，如果不传参数，则整个字符串就是数组的一个元素
+	console.log(str.split());
+	//根据指定字符序列（字符或字符串）拆分，不包含拆分规则本身的字符序列
+	console.log(str.split('5'));
+	//拆分，只取前两个元素放入数组
+	console.log(str.split('5',2));
+	
+	//如果传入""，则字符串的每一个字符都是数组的一个元素
+	console.log(str.split(''));*/
+	
+	
+	//5、字符串拼接contact
+	/*var str = "Hello5itszt5World5hehe";
+	var str1 = "happy";
+	console.log(str.concat(str1));
+	console.log(str+str1);*/
+
+	
+	//6、slice(start,end)，从start位置开始，截取到end位置，end取不到
+	//从start开始，截取到end位置，包含头不包含尾
+	
+	/*var str = "Hello5itszt5World5hehe";
+	//从开始位置截取到末尾
+	console.log(str.slice(10));
+	//-2，表示从后数第2个，不包含第2个
+	console.log(str.slice(10,-2));
+	console.log(str.slice(5,7));
+	
+	//不传参数，截取所有，或者传入错误参数
+	console.log(str.slice());
+	console.log(str.slice(''));
+	//传入不存在索引，返回空字符串
+	console.log(str.slice(896));*/
+	
+	
+	//7、trim
+	/*var str2 = "            username           ";
+	console.log(str2);
+	//去掉首尾空格，用在注册登录
+	console.log(str2.trim());*/
+	
+	
+	//8、转换大小写
+	/*var str3 = "HelloWorld";
+	var str4 = "helloworld";
+	console.log(str3===str4);//false，因为大小写敏感
+	console.log(str3.toLowerCase()===str4);//true
+	var str5 = "HELLOWORLD";
+	console.log(str3.toUpperCase()===str5);//true*/
+
+</script>
+</body>
+</html>

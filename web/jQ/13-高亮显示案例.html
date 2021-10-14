@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	li{
+		float: left;
+		list-style: none;
+		margin: 0 12px 12px 0;
+	}
+	.box{
+		width: 636px;
+		height: 430px;
+		padding: 12px 0 0 12px;
+		border: 1px solid #fff;
+		overflow: hidden;
+		margin: 100px auto;
+	}
+	body{
+		background-color: black;
+	}
+	.box img{
+		border: 0;
+		cursor: pointer;
+		width:200px;
+		height: 200px;
+	}
+</style>
+</head>
+
+<body>
+<div class="box">
+	<ul>
+		<li><img src="images/1.jpg" alt=""></li>
+		<li><img src="images/2.jpg" alt=""></li>
+		<li><img src="images/3.jpg" alt=""></li>
+		<li><img src="images/4.jpg" alt=""></li>
+		<li><img src="images/5.jpg" alt=""></li>
+		<li><img src="images/6.jpg" alt=""></li>
+	</ul>	
+</div>
+<script src="js/jquery-3.1.1.js"></script>
+<script>
+	//需求：鼠标移入对应图片，高亮显示，移出盒子恢复原状
+	//分析：鼠标移入对应图片，当前图片变亮（opacity 1）其它图片变暗（opacity 0.3）
+	
+	$("li").mouseenter(function(){
+		/*$(this).css("opacity",1);
+		$(this).siblings("li").css("opacity",0.4);*/
+		$(this).css("opacity",1).siblings("li").css("opacity",0.4);
+	});
+	
+	//鼠标移出盒子恢复原状
+	$(".box").mouseleave(function(){
+		$(".box>ul").children().css("opacity",1);
+	});
+</script>
+</body>
+</html>

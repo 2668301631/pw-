@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+	table{
+		border-collapse: collapse;
+		border-spacing: 0;
+		border: 1px solid #c0c0c0;
+	}
+	th,td{
+		border: 1px solid #d0d0d0;
+		color: #404060;
+		padding: 10px;
+	}
+	th{
+		background-color: #09c;
+		font:bold 16px "微软雅黑";
+		color: #fff;
+	}
+	td{
+		font: 14px "微软雅黑";
+	}
+	tbody tr{
+		background-color: #f0f0f0;
+	}
+	tbody tr:hover{
+		cursor: pointer;
+		background-color: #fafafa;
+	}
+</style>
+</head>
+
+<body>
+<input type="button" value="获取数据" id="j_btnGetData">
+<table>
+	<thead>
+		<tr>
+			<th>标题</th>
+			<th>地址</th>
+			<th>说明</th>
+		</tr>
+	</thead>
+	<tbody id="j_tbData">
+		<!--<tr>
+			<td>1</td>
+			<td>2</td>
+			<td>3</td>
+		</tr>-->
+	</tbody>
+</table>
+	
+<script src="js/jquery-3.1.1.js"></script>
+<script>
+	$(function(){
+		//模拟从后台拿到数据
+		var data = [{
+			name:"浙江树人大学",
+			url:"http://www.zjsru.cn",
+			type:"信息科技学院"
+		},{
+			name:"浙江树人大学",
+			url:"http://www.zjsru.cn",
+			type:"人外学院"
+		},{
+			name:"浙江树人大学",
+			url:"http://www.zjsru.cn",
+			type:"医学院"
+		}];
+		
+		//需求：点击按钮，根据后台拿到的数据动态生成表格行和列
+		/*
+			1、遍历数组
+			2、根据数组长度for循环，生成每一行每一列
+			3、把生成出来的每一列和每一行拼接到tbody里面
+		*/
+		$("#j_btnGetData").click(function(){
+			//每一次点击创建一个str对象
+			var str="";
+			for(var i=0;i<data.length;i++){
+				//for循环，不停往里面评价tr+td
+				str+= "<tr>"
+						+"<td>"+data[i].name+"</td>"
+						+"<td>"+data[i].url+"</td>"
+						+"<td>"+data[i].type+"</td>"
+						+"</tr>";
+			}
+			//for循环执行王，str里面会有好多拼接完的tr+td，一次性放到tbody里面
+			$('#j_tbData').html(str);
+		});
+		
+	});
+</script>
+</body>
+</html>

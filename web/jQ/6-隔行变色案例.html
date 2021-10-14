@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+<ul>
+	<li>借问酒家何处有，牧童遥指杏花村</li>
+	<li>借问酒家何处有，牧童遥指杏花村</li>
+	<li>借问酒家何处有，牧童遥指杏花村</li>
+	<li>借问酒家何处有，牧童遥指杏花村</li>
+	<li>借问酒家何处有，牧童遥指杏花村</li>
+	<li>借问酒家何处有，牧童遥指杏花村</li>
+	<li>借问酒家何处有，牧童遥指杏花村</li>
+	<li>借问酒家何处有，牧童遥指杏花村</li>
+</ul>
+<script src="js/jquery-3.1.1.js"></script>
+<script>
+	$(function(){
+		
+		$("li:even").css("background-color","pink");
+		$("li:odd").css("background-color","yellow");
+		//JS写法
+		/*var liArr = document.getElementsByTagName("li");
+		for(var i in liArr){
+			if(i%2==0){
+				liArr[i].style.backgroundColor = "pink";
+			}else{
+				liArr[i].style.backgroundColor = "yellow";
+			}
+		}*/
+		
+		//jQ写法
+/*		var jqLi = $("li");
+		for(var i in jqLi){
+			if(i%2==0){
+				//JQ对象转换成JS对象
+				jqLi[i].style.backgroundColor = "pink";
+			}else{
+				jqLi.get(i).style.backgroundColor = "yellow";
+			}*/
+//		}
+	});
+</script>
+</body>
+</html>

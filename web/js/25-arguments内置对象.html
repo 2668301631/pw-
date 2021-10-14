@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+<script>
+	function go(a,b,c){
+		console.log(arguments); //伪数组，放入的是当前函数的参数值（实参的数量）
+		console.log(arguments.callee);
+	}
+	go(55,99,88,77);
+</script>
+</body>
+</html>

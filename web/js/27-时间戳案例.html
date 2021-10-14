@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+	div{
+		color: blue;
+		font-size: 40px;
+		height: 50px;
+		width: 900px;
+		text-align: center;
+		margin: 100px auto;
+	}	
+</style>
+</head>
+
+<body>
+<div>2019年10月22日 08点15分23秒 星期三</div>
+<script>
+	var date = new Date();
+	var year = date.getFullYear();
+	var month = date.getMonth()+1;
+	var day = date.getDate();
+	
+	var week = date.getDay();
+	var hour = date.getHours();
+	var minute = date.getMinutes();
+	var second = date.getSeconds();
+	
+	var div = document.getElementsByTagName("div")[0];
+
+	var weArr = ["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];
+	
+	
+	div.innerHTML = year+"年"+month+"月"+day+"日"+hour+"点"+minute+"分"+second+"秒  "+weArr[week];
+	
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+<ul>
+	<li>我是一个无序列表</li>
+	<li>我是一个无序列</li>
+	<li>我是一个无序列</li>
+	<li>我是一个无序列</li>
+	<li>我是一个无序列</li>
+	<li>我是一个无序列</li>
+	<ol>
+		<li>我是ol里面的li</li>
+		<li>我是ol里面的li</li>
+		<li>我是ol里面的li</li>
+		<li>我是ol里面的li</li>
+	</ol>
+</ul>
+<script src="js/jquery-3.1.1.js"></script>
+<script>
+	$(function(){
+		//层级选择器：子代（>)、后代（空格）（子子孙孙）
+		
+		//后代
+		$("ul li").css({
+			"background-color":"pink",
+			"margin-bottom":"10px"
+		});
+		
+		//子代
+		$("ul>li").css({
+			"background-color":"red",
+		});
+		
+	});
+</script>
+</body>
+</html>

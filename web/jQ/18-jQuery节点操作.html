@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+<button>创建拼接</button>
+<button>清空元素</button>
+<button>复制元素</button>
+<div class="box">
+	<li id="ll">我是一个原生的li</li>
+	<div>我是原生的div</div>
+	<p>我是原生的p标签
+		<span>我是p里面的span</span>
+	</p>
+</div>	
+<script src="js/jquery-3.1.1.js"></script>
+<script>
+	$(function(){
+		//jQuery创建节点的两种方式：1、利用$("标签") 2、html()参考js的innerHtml方法
+		var newLi = $("<li>我是一个JQ的li</li>");
+		console.log($("#ll"));
+		console.log(newLi);
+		
+		//$(".box").html("<p>我是一个生成的p</p>");//跟js的innerHtml方法对应
+		
+		
+		var num = 0;
+		$("button").eq(0).click(function(){
+			var newLi = $("<li>我是一个JQ的li " + (num++) + "</li>");
+			//1.append：拼接子节点，在最后一个子元素后
+			//$(".box").append(newLi);
+			
+			//2.appendTo：也是拼接子节点，也是拼接到最后，调用者和被调用者换位（了解）
+			//newLi.appendTo($(".box"));
+			
+			//3.prepend()：拼接子节点，在第一个子元素前
+			//$(".box").prepend(newLi);
+			
+			//4.prependTo()：反过来调用--了解
+			//newLi.prependTo($(".box"));
+			
+			//5.after()：在当前元素之后拼接
+			//$(".box>div").after(newLi);
+			
+			//6.before()：在当前元素之前拼接
+			$(".box>div").before(newLi);
+			
+			
+		});
+		
+		$("button").eq(1).click(function(){
+			//清空元素：empty、html("")、自己.remove()
+			//$(".box").empty();
+			
+			//$(".box").html("");
+			
+			//$(".box").remove();
+		});
+		
+		
+		//复制元素
+		$("button").eq(2).click(function(){
+			//复制元素：clone，只能深层复制
+			var newP = $(".box>p").clone();
+			$(".box").append(newP);
+			
+			
+		});
+	});
+</script>
+</body>
+</html>

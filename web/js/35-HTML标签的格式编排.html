@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+<script>
+	//1、以下方法是把字符串转换成标签
+	//转换成a标签，带name属性（参数，给name属性赋值）
+	var str = "Hello5itszt5World5hehe";
+	console.log(str.anchor());
+	console.log(str.anchor("我是a标签"));
+	
+	//a标签，带href属性（参数，给href传值）
+	console.log(str.link());
+	console.log(str.link('http://www.baidu.com'));
+	
+	console.log(str.big());
+	console.log(str.sub());
+	console.log(str.sup());
+	console.log(str.bold());
+</script>
+</body>
+</html>

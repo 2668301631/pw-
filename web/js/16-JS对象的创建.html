@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+<script>
+	//创建一个空白对象
+	var student = new Object();
+	//绑定属性
+	student.name = "张三";
+	student.age = 12;
+	
+	//绑定行为--函数
+	student.play = function(){
+		alert("玩游戏");
+	}
+	
+	//对象调用属性
+	alert(student.name);
+	alert(student.age);
+	
+	//对象调用函数
+	student.play();
+	
+	//把功能类似的封装到一个对象里面，想要某一个功能找对象就可以了
+</script>
+</body>
+</html>

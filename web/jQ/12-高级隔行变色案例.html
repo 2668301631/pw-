@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+<ul>
+	<li>何以解忧唯有杜康</li>
+	<li>何以解忧唯有杜康</li>
+	<li>何以解忧唯有杜康</li>
+	<li>何以解忧唯有杜康</li>
+	<li>何以解忧唯有杜康</li>
+	<li>何以解忧唯有杜康</li>
+	<li>何以解忧唯有杜康</li>
+	<li>何以解忧唯有杜康</li>
+</ul>
+<script src="js/jquery-3.1.1.js"></script>
+<script>
+	$(function(){
+		$("li").css({
+			"margin-bottom":"10px",
+			"cursor":"pointer"
+		});
+		$("li:odd").css("background-color","red");
+		$("li:even").css("background-color","yellow");
+		
+		//需求，鼠标移入变成蓝色，鼠标移出变成原来的颜色
+		
+		//记录器
+		var color;
+		$("li").mouseenter(function(){
+			//css方法，如果传入两个参数，是设置样式，如果是一个参数，则获取样式
+			color = $(this).css("background-color");
+			//alert(color);
+			$(this).css("background","blue");
+		});
+		$("li").mouseleave(function(){
+			$(this).css("background",color);
+		});
+	});
+</script>
+</body>
+</html>

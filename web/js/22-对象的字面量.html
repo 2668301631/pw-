@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+<script>
+	//数组的字面量赋值
+	var arr = ["张飞","曹操","曹植","鲁迅"];
+	
+	/*
+		对象的字面量:
+			大括号引起来，里面的属性是以键值对（key:value）的形式表现
+	*/
+	
+	//对象的字面量赋值，类型是Object，空白对象
+	var per = {};
+	var per1 = new People();
+	console.log(per);
+	console.log(per1);
+	function People(){
+		
+	}
+	
+	//对象的字面量赋值，是通过键值对的方式绑定属性和函数的
+	//多个属性或者函数之间用逗号隔开
+	//可读性写法
+	//大括号{},相当于原来的new Object()，就是直接创建一个对象，里面写上属性和函数
+	var per2 = {
+		name:"张三",
+		age:18,
+		sayHi:function(){
+			alert(this.name + "说呵呵!");
+		}
+	};
+	console.log(per2);
+	console.log(per2.age);
+	per2.sayHi();
+</script>
+</body>
+</html>

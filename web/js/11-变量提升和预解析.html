@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+<script>
+/*	//num=60;
+	alert(num);
+	
+	var num=30;*/
+	
+	/*
+		小知识：函数的参数相当于局部变量
+	*/
+	function fn(a,b){
+		alert(a+" "+b);
+	}
+	fn(50,60);
+//	alert(a);
+//	alert(b);
+	
+	//就近原则使用变量
+	//成员变量和局部变量之间同名不冲突
+	//就近原则使用变量内部有就不去外部找
+	var num=20;
+	function fn(){
+		var num = 10;
+		alert(num);
+	}
+	fn();
+	
+	//不同函数之间的局部变量同名不冲突
+	
+</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+	img{
+		border: 1px solid black;
+	}	
+</style>
+</head>
+
+<body>
+<img src="https://www.baidu.com/img/bd_logo1.png" alt="">
+<script src="js/jquery-3.1.1.js"></script>
+<script>
+	//原生JS的入口函数只能写一个，写多个级层叠覆盖
+	/*window.onload = function(){
+		alert("我是原生第一个入口函数");
+	}
+	window.onload = function(){
+		alert("我是原生第二个入口函数");
+	}
+	*/
+	//jQuery的入口函数，多个不会覆盖
+	$(function(){
+		alert("我是第一个入口函数");
+	});
+	
+	$(function(){
+		alert("我是第二个入口函数");
+	});
+	
+	$(document).ready(function(){
+		alert("入口函数1");
+	});
+	$(document).ready(function(){
+		alert("入口函数2");
+	});
+	
+	//文档和图片都加载完成，执行，相当于原生的window.onload
+	/*$(function(){
+		alert("入口函数被弹出");
+	});
+	
+	$(window).ready(function(){
+		alert("入口函数被弹出");
+	});*/
+	
+	
+	//文档加载以后执行
+	/*$(document).ready(function(){
+		alert("入口函数被弹出");
+	});*/
+</script>
+</body>
+</html>

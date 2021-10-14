@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+<ul>
+	<li>我是ul中的li</li>
+	<li>我是ul中的li</li>
+	<li>我是ul中的li</li>
+	<li>我是ul中的li</li>
+	<li>我是ul中的li</li>
+	<li>我是ul中的li</li>
+</ul>
+<div>我是div1</div>	
+<div class="box">我是div2</div>
+<div>我是div3</div>
+<script src="js/jquery-3.1.1.js"></script>
+<script>
+	//1、EVEN和ODD
+	$("li:even").css("background-color","pink");
+	$("li:odd").css("background-color","yellow");
+	
+	//2、FIRST和LAST
+	$("li:first").css("background-color","red");
+	$("li:last").css("background-color","blue");
+	
+	//3、.eq(index)按照索引值选择指定 筛选选择器
+	$("li").eq(3).css("background-color","orange");
+	
+	//4、:eq(index) 基本过滤器
+	$("li:eq(2)").css("background-color","green");
+	
+	//5、:not
+	$("div:not(.box)").css("background-color","red");
+</script>
+</body>
+</html>

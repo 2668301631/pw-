@@ -1,0 +1,171 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+<script>
+	/*
+		内置对象：JS本身已经给我们提供好了很多对象，我们直接拿来new，就可以使用
+		API（Application Programming Interface，应用程序接口）--帮助文档
+		查看帮助文档
+			1、离线文档
+			2、在线文档 W3C
+			3、百度
+			4、MDN  http://developer.mozilla.org/zh-CN/ 开发者网站
+	*/
+	
+	//1、instanceof
+	/*var arr = new Array();
+	var arr1 = [];
+	var arr2 = 56;
+	var arr3 = {};
+	function kk(arr){
+		//一个对象 instanceof 类型，返回值是boolean
+		console.log(arr instanceof Array);
+	}
+	kk(arr);
+	kk(arr1);
+	kk(arr2);
+	kk(arr3);*/
+	
+	
+	/*function Person(){
+		
+	}
+	function fn(p){
+		console.log(p instanceof Person);
+	}
+	
+	var per = new Person();
+	var p = "xx";
+	fn(per);
+	fn(p)*/
+	
+	
+	//2、Array.isArray()
+	/*var arr = [];
+	//HTML5中新增，判断当前对象是不是数组类型
+	console.log(Array.isArray(arr));
+	var arr1 = "xx";
+	console.log(Array.isArray(arr1));*/
+	
+	
+	//3、valueOf()
+	/*var arr = ["张飞","关羽","关二爷","关云长","费雷亚","詹姆斯"];
+	//数组对象本身
+	console.log(arr.valueOf());*/
+	
+	
+	
+	//4、toString()
+	/*var arr = ['张飞','非非','刘备','关羽','关云长','吕布'];
+	console.log(arr.toString());*/
+	
+	
+	//5、join
+	//将数组转换为字符串
+	/*var arr = ['张飞','非非','刘备','关羽','关云长','吕布'];
+	//每两个元素间插入指定值
+	var str = arr.join(" ");
+	var str1 = arr.join("---");
+	var str2 = arr.join();
+	console.log(str);
+	console.log(str1);
+	console.log(str2);*/
+	
+	
+	
+	//6、堆栈操作
+	/*var arr1=[];
+	for(var i=0;i<10;i++){
+		arr1.push("呵呵"+i);
+	}
+	console.log(arr1);
+	for(var i=0;i<10;i++){
+		console.log(arr1.pop());
+	}*/
+	
+	
+	//7、队列操作
+	/*var arr1=[];
+	for(var i=0;i<10;i++){
+		arr1.unshift("呵呵"+i);
+	}
+	console.log(arr1);
+	for(var i=0;i<10;i++){
+		console.log(arr1.shift());
+	}*/
+	
+	
+	//8、sort
+	var arr = [1,15,18,14,7,3];
+	//排序有弊端，按照unicode码，去排列，先比较第一位，按照第一位的排序，第一位如果相等，则排序第二位
+	/*arr.sort();
+	console.log(arr);*/
+	
+	/*arr.sort(function (a,b) {
+		if (a < b ) {           // 按某种排序标准进行比较, a 小于 b
+			return -1;
+		}
+		if (a > b ) {
+			return 1;
+		}
+		// a must be equal to b
+		return 0;
+	});
+	console.log(arr);*/
+	
+	/*
+		看当前回调函数的返回值
+		 小于 0 ，那么 a 会被排列到 b 之前
+		 等于 0 ， a 和 b 的相对位置不变
+		 大于 0 ， b 会被排列到 a 之前
+		 a-b从小到大
+		 b-a从大到小
+	*/
+	
+	/*arr.sort(function(a,b){
+		return a-b;	 
+	});
+	console.log(arr);*/
+	
+	
+	//9、contact
+	/*var arr  = ['a','b','c','d','e'];
+	var arr1 = arr.concat('呵呵');
+	console.log(arr);
+	console.log(arr1);
+	
+	var arr2 = ['张飞','非非','刘备'];
+	var arr3 = arr.concat(arr2);
+	console.log(arr);
+	console.log(arr3);*/
+	
+	
+	//10、slice
+	var arr = ['张飞','非非','刘备','关羽','关云长','吕布'];
+	//把原数组拷贝一份，然后删除，对原数组没有影响
+	//如果该参数为负数，则表示从原数组中的倒数第几个元素开始提取，slice(-2) 表示提取原数组中的倒数第二个元素到最后一个元素（包含最后一个元素）。
+	/*var arr1 = arr.slice(1,3);
+	console.log(arr);
+	console.log(arr1);*/
+	
+	
+	//11、splice
+	var arr = ['张飞','非非','刘备','关羽','关云长','吕布'];
+	//从start开始，删除length个
+	/*var arr1 = arr.splice(1,3);
+	console.log(arr);
+	console.log(arr1);*/
+	
+	
+	//12、indexof
+	/*var arr = ['张飞','非非','刘备','关羽','关云长','吕布'];
+	var index = arr.indexOf('吕布');
+	console.log(index);*/
+</script>
+</body>
+</html>

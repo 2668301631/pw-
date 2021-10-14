@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script src="js/jquery-3.1.1.js"></script>
+<script>
+	$(function(){
+		$('button').eq(0).click(function(){
+			// 参考JS中的value属性,不传入参数就是获取
+			// val()是一个方法，我们获取的是方法返回值，也就是当前元素的value值
+//			alert($('#inp').val());
+			
+			// 获取当前元素的内部所有元素，参考JS中innerHTML属性
+			alert($('.box').html())
+			
+			// 直接获取内部所有后代元素的所有文本内容拼接成字符串，参考JS中innerTEXT属性
+			alert($('.box').text())
+		});
+		
+		$('button').eq(1).click(function(){
+//			$('#inp').val('不要输入！！！')
+			
+			// JQ成绩元素的其中一种方式，识别字符串里的标签，自动创建元素
+			$('.box').html('<p>我是一个创建出来的p标签</p>')
+			
+			// JQ成绩元素的其中一种方式，直接把字符串原封不动设置到页面上
+			$('.box').text('<p>我是一个创建出来的p标签</p>')
+		});
+	});
+</script>
+</head>
+
+<body>
+<button>获取</button>
+<button>设置</button>
+<input type="text" id="inp">
+<div class="box">
+	我是div
+	<li>我是一个div中的li</li>	
+</div>
+
+<!--&lt;p&gt;段落&lt;/p&gt;-->
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+<script>
+	//隐式全局变量，不太好看出来的全局变量
+	//在函数中，不用var声明的变量都是全局变量，不推荐使用
+	function fn(){
+		var num=20;
+		//var a=10,b=20,c=30;
+		//此种情况，a是局部变量，b和c是全局变量
+		var a=b=c=20;
+		//此种情况，d是局部，e和f是全局变量
+		var d = 1; e = 2; f= 3;
+	}
+	fn();
+	alert(b+" "+c);
+	//alert(a);
+	alert(e+" "+f);
+	
+/*	//隐式全局变量
+	function fn(){
+		//b和c都是隐式全局变量
+		var a = b = c = 1;
+		//e和f都是隐式全局变量
+		var d = 1; e = 2; f= 3;
+	}*/
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+<script>
+	//2、通过函数批量创建函数
+	/*
+		优点：解决了第一种创建方式的缺点
+		缺点：代码冗余，类型不明确（类型空白）
+	*/
+	/*
+		this关键字：表示当前对象，当前表示的是谁调用这个函数，就表示那个对象
+	*/
+	function createStudent(name,age){
+		var stu = new Object();
+		stu.name = name;
+		stu.age= age;
+		stu.sayHi = function(){
+			alert(this.name + "地球，你好！");
+		};
+		return stu;  //如果没有此语句，返回的是undefined
+	}
+	
+	//alert(createStudent("李四",65));
+	//console.log(createStudent("李四",65));
+	
+	var stu1 = createStudent("李四",65);
+	var stu2 = createStudent("王五",13);
+	var stu3 = createStudent("张三",25);
+	
+//	console.log(stu1);
+//	console.log(stu2);
+//	console.log(stu3);	
+	
+	stu1.sayHi();
+	stu2.sayHi();
+	stu3.sayHi();
+</script>
+</body>
+</html>
