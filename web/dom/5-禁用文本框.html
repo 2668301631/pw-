@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+用户名：<input type="text" value="Hello World!" id="tt">
+<br>
+<button>禁用</button>
+<button>解禁</button>
+
+<script>
+	var tt = document.getElementById("tt");
+	var bt1 = document.getElementsByTagName("button")[0];
+	var bt2 = document.getElementsByTagName("button")[1];
+	
+	//tt.value  直接操作标签id作为一个元素对象，也是可行，不推荐，结构性很差
+	//禁用文本框
+	bt1.onclick = function(){
+		//属性值可为任意值，不能为空字符串
+		tt.disabled = "disabled";
+	}
+	bt2.onclick = function(){
+		tt.disabled = "";
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+	li{
+		height: 30px;
+		width: 500px;
+		background-color: #999;
+		list-style: none;
+		margin-bottom: 10px;
+		font:700 20px/30px "simsun";
+	}	
+</style>
+</head>
+
+<body>
+<ul>
+	<li>列表1</li>
+	<li>列表2</li>
+	<li>列表3</li>
+	<li>列表4</li>
+	<li>列表5</li>
+	<li>列表6</li>
+</ul>
+
+<script>
+	//简单版
+	var liArr = document.getElementsByTagName("li");
+	for(var i=0;i<liArr.length;i++){
+		if(i%2===0){
+			liArr[i].style.background = "red";
+		}
+	}
+	
+	
+	/*var ul = document.getElementsByTagName("ul")[0];
+	var nodeArr = ul.childNodes;
+	var newArr = [];
+	for(var i=0;i<nodeArr.length;i++){
+		if(nodeArr[i].nodeType===1){
+			newArr.push(nodeArr[i]);
+		}
+	}
+	for(var i=0;i<newArr.length;i++){
+		if(i%2===0){
+			newArr[i].style.backgroundColor = "#ccc";
+		}
+	}*/
+</script>
+</body>
+</html>

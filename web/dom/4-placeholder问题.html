@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+	input{
+		width: 200px;
+		height: 35px;
+		padding-left: 10px;
+		/*color: #999;*/
+	}
+	#la{
+		position: absolute;
+		left: 74px;
+		top: 18px;
+		font-size: 14px;
+		color: #999;
+		cursor: text;
+	}
+	.hide{
+		display: none;
+	}
+	.show{
+		display: inline-block;
+	}
+</style>
+</head>
+
+<body>
+淘宝：
+	<label for="tao" id="la">我是淘宝</label>
+	<input type="text" value="" id="tao"><br><br>
+京东：
+	<input type="text"  value="我是京东" id="jd" style="color: #999;"><br><br>
+placeholder：
+	<input type="text" placeholder="placeholder"><br>
+
+<script>
+	//1、淘宝输入框
+	var tao = document.getElementById("tao");
+	//页面加载是，淘宝输入框获取焦点，一个页面只有一个焦点，谁获得焦点谁响应事件
+	//tao.focus();
+	var la = document.getElementById("la");
+	//输入框添加输入监听
+	tao.oninput = function(){
+		//我们用一层label盖住输入框
+		//一旦输入任何东西就把label隐藏掉
+		//一旦删除清空了，输入框没有内容，把label显示回来
+		/*
+			思路：获取输入框的value，一旦value===''表示没有内容在里面，把我是淘宝显示出来
+			一旦value！===''表示有输入内容，把我是淘宝显示出来
+		*/
+		if(this.value===""){
+			la.className="show";
+		}else{
+			la.className="hide";
+		}
+	};
+	
+	//2、京东输入框
+	var jd = document.getElementById("jd");
+	//添加焦点事件
+	jd.onfocus = function(){
+		if(this.value==="我是京东"){
+			this.value="";
+			this.style.color = "black";
+		}
+	};	
+	//添加失去焦点事件
+	jd.onblur = function(){
+		if(this.value===""){
+			this.value="我是京东";
+			this.style.color = "#999";
+		}
+	};
+	
+</script>
+</body>
+</html>

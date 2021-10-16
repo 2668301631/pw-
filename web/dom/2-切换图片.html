@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+<a href="http://www.baidu.com">切换</a><br>
+<!--<a href="http://www.baidu.com" onClick="fn();return false;">切换</a><br>
+<a href="http://www.baidu.com" onClick="return fn();">切换</a><br>-->
+	
+<img src="images/1.jpg" alt="" width="200">	
+
+<script>
+	var a = document.getElementsByTagName("a")[0];
+	var img = document.getElementsByTagName("img")[0];
+	a.onclick = function(){
+		img.src = "images/2.jpg";
+		//如果a链接点击不想要跳转功能，需要在点击事件里面返回false
+		return false;
+		//如果a链接是通过行内事件添加点击，则需要行内写上retrun false；
+	}
+	
+	/*function fn(){
+		img.src = "images/2.jpg";
+		//如果a链接点击不想要跳转功能，需要在点击事件里面返回false
+		//return false;
+		//如果a链接是通过行内事件添加点击，则需要行内写上retrun false；
+	}*/
+</script>
+</body>
+</html>

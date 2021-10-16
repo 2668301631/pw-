@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+	.box{
+		height: 200px;
+		background-color: pink;
+	}	
+</style>
+</head>
+
+<body>
+<div class="box" id="boxid"></div>
+
+<script>
+	window.onclick = function(){
+		var box = document.getElementById("boxid");
+		//这是在操作一个对象，给对象绑定属性
+		//而跟页面的标签没有关系
+		box.aaa = "哈哈";
+		//这个属性是系统绑定好的
+		box.className = "kk";
+		box.name = "网二";
+		
+		//操作标签属性
+		box.setAttribute("kkk","呵呵呵");
+		//获取标签属性
+		console.log(box.getAttribute("kkk"));
+		
+		//移除标签属性，根据标签属性的键移除值
+		box.removeAttribute("kkk");
+		console.log(box.getAttribute("kkk"));
+	}
+</script>
+</body>
+</html>

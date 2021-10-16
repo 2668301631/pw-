@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+<button id="btn">创建</button>
+<ul id="box">
+	<li id="li1">我是一个列表</li>
+	<div id="dvp">
+		我是一个div
+		<p>我是一个段落</p>
+	</div>
+	<p>我是一个兄弟p</p>
+</ul>
+	
+<script>
+	/*
+		创建元素的三种方式：
+		1、document.write();
+			弊端：一旦页面加载完成以后通过事件输出则会覆盖原来页面所有
+		2、innerHTML
+			弊端：如果父元素原来里面的内容则会全部覆盖掉
+		3、document.createElement("标签名"); 推荐使用
+			一般和appendChild、insertBefore、replaceChild结合使用
+	*/
+	/*
+		调试程序console.log、alert()、document.write()
+		如果是大量输出，需要console.log
+		alert();简单弹出看下数据的值
+		document.write():根据文档流对象去输出当前文档的内容，
+		在页面加载时，会自动创建一个document对象，然后用该对象去加载各项标签，同时也会执行我们自己写的write标签，把内容按加载顺序打印到页面，一旦页面加载完成，document对象就没了，此时我们点击按钮需要用到document对象，所以它好心的帮我们重新创建了一个跟之前的不是同一个对象，那么代表，不是同一个页面
+		
+		重新创建文档流对象，重新输出一个页面结构
+		一般不适合用于调试
+	*/
+	
+	/*
+		dom操作：
+			创建：createElement
+			增：appendChild、insertBefore
+			删：removeChild
+			改：replaceChild
+			查：获取页面元素id、class、TagName、子节点、父节点
+			
+			复制节点：cloneNode
+	*/
+	var btn = document.getElementById("btn");
+	var ul = document.getElementById("box");
+	
+	btn.onclick = function(){
+		//document.write("<div>我是document.write创建</div>");
+		//ul.innerHTML = "<div class='cu'>我是innerHTML创建</div>";
+		//和innerHTML的区别就是：text不会解析字符串里面的标签，只会做普通的字符串处理
+		//innerHTML会解析里面的字符串，把字符串当做HTML标签解析
+		//ul.innerText = "<div class='cu'>我是innerHTML创建</div>";
+		
+		//这是创建了一个对象，和页面没有关系
+		var li = document.createElement("li");
+		li.innerHTML = "我是一个create创建出来的";
+		li.style.backgroundColor = "red";
+		//在父节点的最后拼接一个子节点
+		ul.appendChild(li);
+		
+		
+		//删除一个子节点，参数：传入一个子节点对象
+		/*var li1 = document.getElementById("li1");
+		ul.removeChild(li1);*/
+		
+		
+		//修改标签：参数（新元素对象，被替换的元素对象）
+		/*var dvp = document.getElementById("dvp");
+		var p = document.createElement("p");
+		p.innerHTML= "我是创建出来的p";
+		p.style.backgroundColor = "yellow";
+		ul.replaceChild(p,dvp);*/
+		
+		
+		//insertBefore
+		var dv1 = document.createElement("div");
+		dv1.innerHTML = "我是第一位插班生";
+		dv1.style.backgroundColor ="green";
+		
+		//在指定元素之前插入，参数：新插入的元素对象，被插入对象
+		ul.insertBefore(dv1,li);
+		
+		
+		//新客隆的元素作为返回值体现，参数布尔值：true表示深层复制，false表示浅层复制
+		//false只是复制标签，不带内容（内部子节点和内部文本），一般我们都是深层复制
+		/*var newDV = dv1.cloneNode(true);
+		ul.appendChild(newDV);*/
+	}
+	
+	
+	
+</script>
+</body>
+</html>

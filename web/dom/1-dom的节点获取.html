@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+	li{
+		margin: 20px 0 0 0;
+	}	
+</style>
+</head>
+
+<body>
+<div class="box" id="parent">
+	<p>我是一个段落</p>
+	<div class="son">我不是son</div>
+</div>
+	
+<div class="box">我是第二个div</div>
+
+<button id="bt">改变</button>
+<ul>
+	<li>列表项1</li>
+	<li>列表项2</li>
+	<li>列表项3</li>
+	<li>列表项4</li>
+	<li>列表项5</li>
+	<li>列表项6</li>
+</ul>
+<script>
+	//1、根据id获取dom对象
+	var parent1 = document.getElementById("parent");
+	console.log(document);
+	console.log(parent1);
+	
+	//2、根据class获取dom对象
+	//该方法无论获取到的class元素有几个，返回值都是数组
+	var box = document.getElementsByClassName("box");
+	console.log(box[1]);
+	//box.style.backgroundColor="red";//数组没有style属性
+	//操作元素数组的1号
+	box[1].style.backgroundColor="red";
+	
+	//点击按钮，把所有li背景颜色、文字大小改变
+	//3、根据标签名获取dom对象
+	var bt = document.getElementById("bt");
+	var liArr = document.getElementsByTagName("li");
+	bt.onclick = function(){
+		//console.log(liArr);
+		for(var i in liArr){
+			if(liArr[i].nodeType===1){
+				liArr[i].style.backgroundColor="pink";
+				liArr[i].style.fontSize="22px";
+			}
+		}
+	}
+
+</script>
+</body>
+</html>

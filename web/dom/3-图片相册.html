@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+	body{
+		background-color: #ccc;
+	}
+	#box{
+		margin-left: 200px;
+		margin-top: 50px;
+	}
+	ul{
+		margin: 0;
+		padding: 0;
+	}
+	ul>li{
+		float: left;
+		list-style: none;
+		margin: 20px 10px 20px 0;
+	}
+	li img{
+		width: 100px;
+		
+	}
+	.reg{
+		text-decoration: none;
+		color: #ff666d;
+		font-size: 20px;
+		font-weight: 600;
+	}
+	#show img{
+		width: 400px;
+		height: 250px;
+	}
+</style>
+</head>
+
+<body>
+<div class="box">
+	<h2>相册画廊</h2>
+	<a href="#" class="reg">注册</a>
+	<ul>
+		<li>
+			<a href="images/1.jpg" title="图片A">
+				<img src="images/1-small.jpg" alt="">
+			</a>
+		</li>
+		<li>
+			<a href="images/2.jpg" title="图片B">
+				<img src="images/2-small.jpg" alt="">
+			</a>
+		</li>
+		<li>
+			<a href="images/3.jpg" title="图片C">
+				<img src="images/3-small.jpg" alt="">
+			</a>
+		</li>
+		<li>
+			<a href="images/4.jpg" title="图片D">
+				<img src="images/4-small.jpg" alt="">
+			</a>
+		</li>
+	</ul>
+	
+	<div style="clear: both;"></div>
+	
+	<div id="show">
+		<img src="images/placeholder.png" alt="" id="imgShow">
+	</div>
+	
+	<p id="name">请选择一张图片</p>
+</div>
+<script>
+	//我们找到页面某一个或某一些元素，不止可以通过document点找到
+	//因为document是封装了整个页面，所以document去get是整个页面去找
+	//那如果单纯通过一个ul或者其他标签去getElement呢？ 是不是就是获取指定元素下面的元素呢？
+	//答案是肯定的！
+	//先找到ul
+	var ul = document.getElementsByTagName("ul")[0];
+	//通过ul去找a标签，就是找到ul下面的所有a标签
+	var aArr = ul.getElementsByTagName("a");
+	//console.log(aArr[0]);
+	
+	//找到显示大图片的img标签
+	var imgShow = document.getElementById("imgShow");
+	
+	//找到显示名字的p标签
+	var imgName = document.getElementById("name");
+	
+	//给每一个a标签添加事件
+	//通过循环的方式给多个元素添加事件
+	for(var i=0;i<aArr.length;i++){
+		//添加点击事件
+		aArr[i].onclick = function(){
+			//alert("1");
+			//点击对应a标签，则获得当前点击的a标签的href值，设置到下面的img的src即可
+			imgShow.src = this.href;
+			//名字p标签显示当前a标签的title值
+			imgName.innerHTML = this.title;
+			//防止a标签点击跳转到href对应的地址
+			return false;
+		}
+	}
+	
+	
+</script>
+</body>
+</html>
