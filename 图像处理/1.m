@@ -1,2 +1,2 @@
-A=imread('drum.bmp');
+A=imread('rice.tif');
 imshow(A);
