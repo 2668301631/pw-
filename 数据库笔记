@@ -3,8 +3,22 @@ create table 表名(
   列名1 数据类型(长度),
   列名2 数据类型(长度),
   ...,
+  name varchar(255) not null,
 )
+
+表约束
 列名 data_type(length) [Not NUll] [DEFAULT value] [AUTO_INCREMENT] column_constraint;
+1、not null 是否空值
+2、unique 或者primary key 每条记录的值必须是唯一的，
+	在创表时一次约束多个列并对约束命名：
+				CONSTRAINT 约束名 UNIQUE (列名1,列名2)
+	在创表后定义： alter table 名字 
+					add unique (列名)
+					add CONSTRAINT 约束名 UNIQUE (列名1,列名2)
+	撤销约束：drop index 约束名
+3、primary key：主键约束
+	创建时约束：姓名 int NOT NULL PRIMARY KEY,
+
 
 在表中插入行
 所有的列需要插入的值
