@@ -1,0 +1,31 @@
+创建表
+create table 表名(
+  列名1 数据类型(长度),
+  列名2 数据类型(长度),
+  ...,
+)
+列名 data_type(length) [Not NUll] [DEFAULT value] [AUTO_INCREMENT] column_constraint;
+
+在表中插入行
+所有的列需要插入的值
+insert into 表名称 values(值1，值2...)
+指定插入数据的列其对应的值
+insert into table_name (列1, 列2,...) values (值1, 值2,....)
+
+指定所要插入数据的列和其对应的值
+
+数据类型
+date xxxx-xx-xx
+datetime xxxx-xx-xx xx-xx-xx
+time xx-xx-xx
+
+统计人数
+select count(*) from xs;
+select count(*) as 学生人数 from xs;
+select count(总学分) from xs
+	where 总学分>=50;
+
+use命令使用数据库
+use xs;
+go;
+select  学号 from xs;
