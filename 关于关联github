@@ -1,0 +1,23 @@
+1、新电脑关联github or gitee
+    初始化git
+        git init
+    配置本地邮箱与用户名 
+        git config --global user.name "你的用户名"
+        git config --global user.email "你的邮箱"
+    生成ssh key
+        ssh-keygen -t rsa -C "你的邮箱"
+    在github中添加ssh key
+    连接测试：
+        对github执行   ssh -T git@github.com
+        对gitee执行    ssh -T git@git.oschina.net
+
+2、新仓库关联新电脑
+    复制远程仓库ssh地址
+    执行 git remote add origin 你复制的地址
+        如果你在创建 repository 的时候，加入了 README.md 或者 LICENSE ，那么 github 会拒绝你的 push 。你需要先执行 git pull origin master。
+    执行 git push -u origin master 将本地仓库上传至Github的仓库并进行关联
+
+3、已有本地仓库 关联新远程仓库
+    cd existing_git_repo
+    git remote add origin https://gitee.com/pzxgitea/pzx-chinese-code-warehouse.git
+    git push -u origin master
