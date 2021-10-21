@@ -1,6 +1,6 @@
 创建表
 create table 表名(
-  列名1 数据类型(长度),
+  c
   列名2 数据类型(长度),
   ...,
   name varchar(255) not null,
@@ -18,13 +18,37 @@ create table 表名(
 	撤销约束：drop index 约束名
 3、primary key：主键约束
 	创建时约束：姓名 int(length) [NOT NULL] [PRIMARY KEY],
-	
+4、foreign key:	一个表中的 FOREIGN KEY 指向另一个表中的 		PRIMARY KEY。
+	FOREIGN KEY (列名) REFERENCES 表名(列名)
+5、check :约束限定值
+	创建表时
+		单列定义 Id_P int NOT NULL CHECK (Id_P>0),
+		多列定义 CONSTRAINT chk_Person CHECK (Id_P>0 AND 		City='Sandnes')
+	已有表时
+		ALTER TABLE Persons
+		ADD CHECK (Id_P>0)
+		或者
+		ADD CONSTRAINT chk_Person CHECK (Id_P>0 AND City='Sandnes')
+	撤销约束
+		DROP CHECK chk_Person
+		或者
+		DROP CONSTRAINT chk_Person
+6、default:默认值
+	创建表时
+		单列约束：City varchar(255) DEFAULT 'Sandnes'
+			OrderDate date DEFAULT GETDATE() //插入系统值
+	已有表时
+		alter table name 
+		alter name set default 'default'
+	撤销
+		alter table Name
+		alter name drop default
 
 在表中插入行
 所有的列需要插入的值
 insert into 表名称 values(值1，值2...)
 指定插入数据的列其对应的值
-insert into table_name (列1, 列2,...) values (值1, 值2,....)
+insert into tabcle_name (列1, 列2,...) values (值1, 值2,....)
 
 指定所要插入数据的列和其对应的值
 
