@@ -36,7 +36,7 @@
 <body>
 <div class="box">
 	<ul>
-		<li><img src="images/1.jpg" alt=""></li>
+		<li><img src="images/1.jpg" alt=""></li>	
 		<li><img src="images/2.jpg" alt=""></li>
 		<li><img src="images/3.jpg" alt=""></li>
 		<li><img src="images/4.jpg" alt=""></li>
@@ -50,7 +50,7 @@
 	//分析：鼠标移入对应图片，当前图片变亮（opacity 1）其它图片变暗（opacity 0.3）
 	
 	$("li").mouseenter(function(){
-		/*$(this).css("opacity",1);
+		/*$(this).css("opacity",1);//设置透明度为1
 		$(this).siblings("li").css("opacity",0.4);*/
 		$(this).css("opacity",1).siblings("li").css("opacity",0.4);
 	});
