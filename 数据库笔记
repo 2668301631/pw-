@@ -17,8 +17,8 @@ create table 表名(
 					add CONSTRAINT 约束名 UNIQUE (列名1,列名2)
 	撤销约束：drop index 约束名
 3、primary key：主键约束
-	创建时约束：姓名 int NOT NULL PRIMARY KEY,
-
+	创建时约束：姓名 int(length) [NOT NULL] [PRIMARY KEY],
+	
 
 在表中插入行
 所有的列需要插入的值
