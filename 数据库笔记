@@ -23,6 +23,7 @@ create table 表名(
 	创建时约束：姓名 int(length) [NOT NULL] [PRIMARY KEY],
 4、foreign key:	一个表中的 FOREIGN KEY 指向另一个表中的 		PRIMARY KEY。
 	FOREIGN KEY (列名) REFERENCES 表名(列名)
+	
 5、check :约束限定值
 	创建表时
 		单列定义 Id_P int NOT NULL CHECK (Id_P>0),
@@ -53,10 +54,19 @@ insert into 表名称 values(值1，值2...)
 指定插入数据的列其对应的值
 insert into tabcle_name (列1, 列2,...) values (值1, 值2,....)
 
-在表中添加列
-alter 
+添加列
+alter table Name
+ADD   列名 列的描述
 
-指定所要插入数据的列和其对应的值
+删除列                                                                                                                                                         
+alter table Name 
+DROP COLUMN  列名
+
+修改列
+ALTER TABLE  表名
+ALTER COLUMN  列名 列的描述
+
+
 
 数据类型
 date xxxx-xx-xx
