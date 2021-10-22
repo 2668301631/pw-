@@ -55,16 +55,12 @@ insert into 表名称 values(值1，值2...)
 insert into tabcle_name (列1, 列2,...) values (值1, 值2,....)
 
 添加列
-alter table Name
-ADD  column 列名 列的描述
+alter table Name ADD  column 列名 列的描述
 
 删除列                                                                       
-alter table Name 
-DROP COLUMN  列名
+alter table Name DROP COLUMN  列名
 
 修改列
-ALTER TABLE  表名
-ALTER COLUMN  列名 列的描述
 alter table xskc MODIFY 课程名 char(18) 
 
 
