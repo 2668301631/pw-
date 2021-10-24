@@ -25,13 +25,12 @@ create table 表名(
 	FOREIGN KEY (列名) REFERENCES 表名(列名)
 	
 5、check :约束限定值
-	创建表时
-		单列定义 Id_P int NOT NULL CHECK (Id_P>0),
+	创建表时	单列定义 Id_P int NOT NULL CHECK (Id_P>0),
 		多列定义 CONSTRAINT chk_Person CHECK (Id_P>0 AND 		City='Sandnes')
 	已有表时
 		ALTER TABLE Persons
 		ADD CHECK (Id_P>0)
-		或者
+		或
 		ADD CONSTRAINT chk_Person CHECK (Id_P>0 AND City='Sandnes')
 	撤销约束
 		DROP CHECK chk_Person
@@ -42,8 +41,9 @@ create table 表名(
 		单列约束：City varchar(255) DEFAULT 'Sandnes'
 			OrderDate date DEFAULT GETDATE() //插入系统值
 	已有表时
-		alter table name 
-		alter name set default 'default'
+		alter table Name 
+		CHANGE COLUMN <字段名> <数据类型> DEFAULT <默认值>;
+		
 	撤销
 		alter table Name
 		alter name drop default
