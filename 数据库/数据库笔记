@@ -41,12 +41,14 @@ create table 表名(
 		单列约束：City varchar(255) DEFAULT 'Sandnes'
 			OrderDate date DEFAULT GETDATE() //插入系统值
 	已有表时
-		alter table Name 
-		CHANGE COLUMN <字段名> <数据类型> DEFAULT <默认值>;
+		alter table xsqk alter column 性别 dorp default;
+		alter table xsqk alter column 性别 set default '男';
 		
 	撤销
 		alter table Name
 		alter name drop default
+7\注释
+comment ''
 
 在表中插入行
 所有的列需要插入的值

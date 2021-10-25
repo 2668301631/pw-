@@ -1,0 +1,31 @@
+多表查询
+表和表之间做间接查询，往往有隐藏的链接调件，一般为一个表的主键与另一个表的外键相等
+n个表做链接查询，一般有n-1个隐含调件
+
+1链接查询
+select 课程名，课程号from kc
+    {select distinct 课程号 from kc natural right outer join}
+2查询
+select 姓名,课程号,成绩
+from xs,kc,xs_kc
+where xs.'学号'=xs_kc.'学号' and kc.'课程号'=xs_kc'课程号'
+
+select 姓名成绩
+from xs inner ioin xs_kc
+on kc.'课程号'=xs_kc.'课程号'
+where 课程号='206' and 成绩>=8
+
+查每个人
+select 学号，avg(成绩) 平均成绩
+from xs_kc
+group by 学号
+//加条件
+having avg(成绩) >= 80
+
+查平均成绩>65
+select 姓名,avg(成绩)
+from
+where xs.'学号'=xs_kc.'学号'
+group by 姓名
+having avg(成绩)>=65
+
