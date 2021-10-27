@@ -54,7 +54,7 @@ comment ''
 所有的列需要插入的值
 insert into 表名称 values(值1，值2...)
 指定插入数据的列其对应的值
-insert into tabcle_name (列1, 列2,...) values (值1, 值2,....)
+insert into table_name (列1, 列2,...) values (值1, 值2,....)
 
 添加列
 alter table Name ADD  column 列名 列的描述
