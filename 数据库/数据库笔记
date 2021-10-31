@@ -20,22 +20,27 @@ create table 表名(
 					add CONSTRAINT 约束名 UNIQUE (列名1,列名2)
 	撤销约束：drop index 约束名
 3、primary key：主键约束
-	创建时约束：姓名 int(length) [NOT NULL] [PRIMARY KEY],
-4、foreign key:	一个表中的 FOREIGN KEY 指向另一个表中的 		PRIMARY KEY。
+	创建时约束：
+	name int(length) [NOT NULL] [PRIMARY KEY]
+	or
+	CONSTRAINT <> primary key()
+	designate primary key after made
+	alter table <> add primary key();
+	
+4、foreign key:	一个表中的 FOREIGN KEY 指向另一个表中的 		
 	FOREIGN KEY (列名) REFERENCES 表名(列名)
 	
 5、check :约束限定值
-	创建表时	单列定义 Id_P int NOT NULL CHECK (Id_P>0),
-		多列定义 CONSTRAINT chk_Person CHECK (Id_P>0 AND 		City='Sandnes')
+	创建表时	单列定义 name int NOT NULL CHECK (name>0),
+		多列定义 CONSTRAINT Name CHECK (name>0 AND City='Sandnes')
 	已有表时
-		ALTER TABLE Persons
-		ADD CHECK (Id_P>0)
-		或
-		ADD CONSTRAINT chk_Person CHECK (Id_P>0 AND City='Sandnes')
+		ALTER TABLE <> ADD CHECK (name>0)
+		or
+		ADD CONSTRAINT Name CHECK (name>0 AND City='Sandnes')
 	撤销约束
-		DROP CHECK chk_Person
+		DROP CHECK Name
 		或者
-		DROP CONSTRAINT chk_Person
+		DROP CONSTRAINT Name
 6、default:默认值
 	创建表时
 		单列约束：City varchar(255) DEFAULT 'Sandnes'
