@@ -29,3 +29,7 @@ where xs.'学号'=xs_kc.'学号'
 group by 姓名
 having avg(成绩)>=65
 
+
+
+
+通配符必须在later之后，否则就是普通字符
