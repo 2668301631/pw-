@@ -1,0 +1,24 @@
+
+先执行内层select语句
+将内层select结果作为外层查询语句查询条件
+不相关子查询
+
+select xs.学号，姓名 from xs,xs_kc
+where xs.'学号'=xs_kc.'学号'
+and 课程号='101'
+
+select 学号，姓名
+from xs
+where 学号 in
+(select 学号 from xs_kc
+where 课程号='101')
+
+select 学号，姓名 from xs
+where 学号 not in
+(select 学号 from kc,xs_kc
+where kc.'课程号'= xs_kc.'课程号'
+and 课程名 ='离散数学')
+
+select 学号 from xs_kc
+where 课程号 in
+(select )
