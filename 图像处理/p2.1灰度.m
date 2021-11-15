@@ -1,16 +1,16 @@
 clc,clear,close all;
 i=imread('pout.tif');
-%è¡Œä¸åˆ—
+%Í¼ÏñµÄĞĞÓëÁĞ
 row=size(i,1);
 column=size(i,2);
-N=zeros(1,256); %åˆ›å»º1è¡Œ256åˆ—é›¶çŸ©é˜µ
+N=zeros(1,256); %´´½¨0¾ØÕó
 for I=1:row
     for j=1:column
         k=i(I,j);
-        N(k+1)=N(k+1)+1; %ç»Ÿè®¡å„ä¸ªç°åº¦å€¼çš„åƒç´ æ•°
+        N(k+1)=N(k+1)+1; %Í³¼Æ¸÷»Ò¶ÈµÄÏñËØÊı
     end
 end
 figure;
 subplot(121); imshow(i);
-subplot(122); bar(N);%ç›´æ–¹å›¾
-axis tight;%è®¾ç½®åæ ‡è½´
+subplot(122); bar(N);
+axis tight;%»æÖÆ×ø±êÖá
