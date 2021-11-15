@@ -3,15 +3,19 @@
 将内层select结果作为外层查询语句查询条件
 不相关子查询
 
+//连接查询
 select xs.学号，姓名 from xs,xs_kc
 where xs.'学号'=xs_kc.'学号'
 and 课程号='101'
+查询课程号为101的学号与姓名
 
+//嵌套查询
 select 学号，姓名
 from xs
 where 学号 in
 (select 学号 from xs_kc
 where 课程号='101')
+从xs_kc中课程号为101的学号中查询xs中相同的学号，姓名
 
 select 学号，姓名 from xs
 where 学号 not in
@@ -22,3 +26,41 @@ and 课程名 ='离散数学')
 select 学号 from xs_kc
 where 课程号 in
 (select )
+
+select 学好,姓名，专业名，出生日期 from xs
+where 出生日期<(select min(出生日期) from xs
+where 专业名='计算机')
+找比计算机专业出生日期还小的学生的学好姓名专业出生日期
+
+
+找比课程号101的最低成绩大的课程206的最低成绩
+select min(成绩) from xs_kc
+where 课程号='206' and 成绩>=
+(select min(成绩) from xs_kc where 课程号 ='101')
+
+选修两门及以上学生的姓名
+连接查询
+select 姓名，学号
+where xs.'学号'=xs_kc.'学号'
+group by xs_kc.'学号'
+having count(*)>=2;
+
+嵌套查询
+select 姓名 from xs
+where 学号 in 
+(select 学号 from xs_kc
+group by 学号
+having count(*)>=2)
+
+查询平均成绩在78分以上的学生姓名
+select avg(成绩)，姓名，学号 
+from xs,xs_kc
+where xs.学号= xs_kc.学号
+group by 学号
+hacing avg(成绩)>=75;
+
+select 姓名 from xs
+where 学号 in
+(select 学号 from xs_kc
+group by 学号
+having avg(成绩)>=75)

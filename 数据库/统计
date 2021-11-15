@@ -1,0 +1,5 @@
+统计人数
+select count(*) from xs;
+select count(*) as 学生人数 from xs;
+select count(总学分) from xs
+	where 总学分>=50;
