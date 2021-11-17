@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>属性的获取与设置</title>
+    <style type="text/css">
+        #box{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <h2>文本节点-标题</h2>
+     <p title='这里是一个段落注释'>文本节点-段落 这里可以插入段落文字</p>
+     <ul id='classlist'>
+         <li class="item">javascript</li>
+         <li class="item">css</li>
+         <li>DOM</li>
+     </ul>
+     <script type="text/javascript">
+            var tagNode=document.getElementsByTagName('p')[0];
+            //获取属性
+            var title = tagNode.getAttribute('title');
+            // console.log(title);
+
+     </script>
+</body>
+</html>
