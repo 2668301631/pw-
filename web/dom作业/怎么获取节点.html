@@ -1,0 +1,32 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>获取元素节点</title>
+ </head>
+ <body>
+     <h2>文本节点-标题</h2>
+     <p title='这里是一个段落注释'>文本节点-段落 这里可以插入段落文字</p>
+     <ul id='classlist'>
+         <li class="item">javascript</li>
+         <li class="item">css</li>
+         <li>DOM</li>
+     </ul>
+     <script type="text/javascript">
+        //  通过id获取一个节点并赋值给一个变量
+        var idnode = document.getElementById('classlist');
+        console.log(idnode);
+        console.log(typeof node); 
+        //通过标签名获取
+        //得到的是一个节点对象集合，可以中括号+下标的到相应对象
+        var tagnode = document.getElementsByTagName('li');
+        console.log(tagnode);
+        //通过类获取
+        var classnode =document.getElementsByClassName('item');
+        console.log(classnode);
+        
+     </script>
+ </body>
+ </html>
