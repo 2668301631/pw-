@@ -13,7 +13,7 @@
 </head>
 <body>
     <h2>文本节点-标题</h2>
-     <p title='这里是一个段落注释'>文本节点-段落 这里可以插入段落文字</p>
+     <p title='这里是一个段落注释' >文本节点-段落 这里可以插入段落文字</p>
      <ul id='classlist'>
          <li class="item">javascript</li>
          <li class="item">css</li>
@@ -24,7 +24,8 @@
             //获取属性
             var title = tagNode.getAttribute('title');
             // console.log(title);
-
+            //设置id属性为box
+            tagNode.setAttribute('id','box');
      </script>
 </body>
 </html>
