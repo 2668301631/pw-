@@ -1,0 +1,78 @@
+视图（View）是从一个或多个表（或视图）导出的表。视图与表（有时为与视图区别，也称表为基本表——Base Table）不同，视图是一个虚表，即视图所对应的数据不进行实际存储，数据库中只存储视图的定义，在对视图的数据进行操作时，系统根据视图的定义去操作与视图相关联的基本表。
+
+一、视图的创建
+    从表xs与表xs_kc创建视图，找到平均成绩大于80的同学的学号姓名平均成绩
+
+        create view  view_name
+        as
+        select 学号，avg(成绩)，姓名
+        from xs,xs_kc
+        where xs.学号=xs_kc.学号 and avg(成绩) > 80;
+
+    带有统计函数的视图是不可更新的
+
+    创建表
+    例２：创建v_score1，要求基本表来源：S,C,SC；选择的字段为：S表中的sno、sname；C表中的cname及SC表中score；要求查询的数据为学号为20030001的学生的考试成绩。
+        create view v_score1  
+        As  
+        Select s.sno,s.sname,c.cname,sc.score  
+        From s,c,sc  
+        Where s.sno=sc.sno and c.cno=sc.cno and sno=  “  20030001”  
+
+二、WITH check OPTION 
+    表示对视图进行更新、删除、或插入的行为时满足视图定义中的谓词条件
+    建立信息系学生的视图，并要求进行修改和插入操作时仍需保证该视图只有信息系的学生
+
+        Create view IS_Student
+        AS
+        select Sno,Sname,Sage
+        from Student
+        where Sdept='IS'
+        with check option;
+
+三、查询视图
+    例 4 在信息系学生中查找年龄小于20的
+        select 年龄,姓名
+        from xs_view
+        where age<20;
+
+        有时一个视图不足以查询
+        查询选修了1号课程的信息系学生
+        select 姓名，学号
+        from xs,xs_kc
+        where xs.学号=xs_kc.学号 and xs_kc='1';
+
+四、更新视图
+    插入、删除、修改
+        Create view IS_Student
+        AS
+        select Sno,Sname,Sage
+        from Student
+        where Sdept='IS'
+        with check option;
+
+    将信息系学生视图IS_Student 好、中学号为200215122的学生姓名改为"张大屁"
+            update IS_Student
+            set sname = 'xxx'
+            where sno='2019100200';
+
+        update xs_kc
+        set 成绩=90
+        where 学号='xxx' and 课程号='xxx'
+
+        update xs_kc
+        set 学号='xxx', 课程号='xxx'
+        where 成绩=90
+
+    插入
+        insert into 
+        IS_Student
+        value('201910','力和','21')
+
+    删除
+        delete
+        from IS_Student
+        where Sno='20191002'
+
+五、视图的删除
+    drop view <试图名>
