@@ -14,12 +14,14 @@ for i=1:row
         if J(i,j)<0
             J(i,j)=0;
         end
-        if J(i,j)>255;
+        if J(i,j)>255
             J(i,j)=255;
         end
     end
 end
 figure;
+I=unit8(I);
+J=unit8(J);
 subplot(121),imshow(I);
 subplot(122),imshow(J);
 
