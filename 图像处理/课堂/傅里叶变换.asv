@@ -1,5 +1,0 @@
-a=imread('pout.tif');
-imshow(a);
-a2=ff2(a);
-a2=fftshift(a2);%流量分流到中�?
-figure,imshow(log(abs(a2)+1),[0,10]);%显示变换后的�?
