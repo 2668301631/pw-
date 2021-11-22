@@ -11,7 +11,7 @@ nodeValue
     文本节点的值是文本本身
     属性节点的值是属性的值
 
-nodeType
+nodeType  
     节点的类型 只读
     元素 1
     属性 2
